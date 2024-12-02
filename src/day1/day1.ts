@@ -32,4 +32,19 @@ export const findGaps = (array1: number[], array2: number[]): number => {
   }, 0);
 };
 
+export const findSumOfWeightedOccurrences = (
+  firstNumbers: number[],
+  secondNumbers: number[]
+): number => {
+  let totalSum = 0;
+
+  firstNumbers.forEach((num) => {
+    const count = secondNumbers.filter((n) => n === num).length;
+    totalSum += num * count;
+  });
+
+  return totalSum;
+};
+
 console.log(findGaps(firstNumbers, secondNumbers));
+console.log(findSumOfWeightedOccurrences(firstNumbers, secondNumbers));
